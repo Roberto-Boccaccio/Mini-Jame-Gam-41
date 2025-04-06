@@ -48,6 +48,8 @@ public class PlayerStats : MonoBehaviour
     public GameObject follower;
     public List<GameObject> followerSpawnPoints;
 
+    public HealthBar healthBar;
+
     public List<LevelRange> levelRanges;
 
     void Awake()
@@ -163,6 +165,8 @@ public class PlayerStats : MonoBehaviour
                 currentHealth = characterData.MaxHealth;
             }
         }
+
+        healthBar.SetHealth(currentHealth / characterData.MaxHealth);
     }
 
     public void SpawnWeapon(GameObject weapon)
